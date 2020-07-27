@@ -12,7 +12,7 @@
 (defsystem :cl-dsl-tests
   :description "Tests for CL-DSL."
   :licence "GPL"
-  :depends-on (:cl-dsl :eos)
+  :depends-on (:cl-dsl :fiveam)
   :components ((:file "tests")))
 
 (defmethod perform ((op test-op) (sys (eql (find-system :cl-dsl))))

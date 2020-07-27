@@ -18,7 +18,7 @@
   (with-macrolets '(foo bar) body))
 
 (defpackage #:cl-dsl-tests
-  (:use #:cl #:cl-dsl-test-1 #:eos)
+  (:use #:cl #:cl-dsl-test-1 #:fiveam)
   (:export #:run-tests))
 
 (in-package cl-dsl-tests)
@@ -28,8 +28,8 @@
 
 (defun run-tests ()
   (let ((results (run 'dsl)))
-    (eos:explain! results)
-    (unless (eos:results-status results)
+    (fiveam:explain! results)
+    (unless (fiveam:results-status results)
       (error "Tests failed."))))
 
 (test simple-dsl
